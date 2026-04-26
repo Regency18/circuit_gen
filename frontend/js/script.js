@@ -5,19 +5,20 @@ import { OrSVG, NotSVG, AndSVG } from './svg'
 
 
 const equation = document.getElementById("equation");
-console.log(equation)
-const btn = document.getElementById("result");
+const form = document.getElementById("form");
 const circuit = document.getElementById("circuit");
-const simplified = document.getElementById("simplified")
 
 //send equation string to fastAPI backend
 async function sendEquation(event) {
+    event.preventDefault();
     const response = await fetch('http://localhost:8000/equation', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ value: equation.value })
+        body: JSON.stringify({ newEq: equation.value })
     })
     if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Error details:", errorData);
         circuit.innerText = "The equation you entered is invalid."
         return;
     }
@@ -68,9 +69,7 @@ async function sendEquation(event) {
             graph.addCell(paper.getDefaultLink().set(attributes));
         }
     );
-
-    event.preventDefault();
 }
 
-btn.addEventListener("click", sendEquation)
+form.addEventListener("submit", sendEquation)
 

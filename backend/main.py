@@ -6,7 +6,6 @@ from equation import Equation
 app = FastAPI()
 
 class Receive(BaseModel):
-    value: str
     newEq: str
 
 app.add_middleware(
@@ -22,7 +21,7 @@ async def root():
 
 @app.post("/equation")
 async def equation(eq: Receive):
-    recieved_value = eq.value
+    recieved_value = eq.newEq
     try:
         equation = Equation(recieved_value)
         sent_value = equation.string_to_dict()

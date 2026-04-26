@@ -9,12 +9,9 @@
     <h1 class="title">
         Circuit Generator
     </h1>
-    <form onsubmit=sendEquation(event)>
-        <input type="text" id="equation" placeholder="Enter that shit">
-        <button type="button" id="result">Enter</button>
+    <form id="form" class="form" onsubmit=sendEquation(event)>
+        <input class="input" type="text" id="equation" placeholder="Enter that shit">
     </form>
-    <div id="simplified">
-    </div>
     <div id="circuit">
     </div>
     <script type="module" src="js/script.js"></script>

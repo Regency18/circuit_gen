@@ -25,7 +25,7 @@ export class CircuitBuilder {
         } else if (type === 'operation') {
             // Operations positioned right-to-left based on depth
             // Children spread vertically centered around parent
-            const horizontalSpacing = 200;
+            const horizontalSpacing = 100;
             const verticalSpacing = 120; // Space between children
             const startX = 750; // Start from right side
 
