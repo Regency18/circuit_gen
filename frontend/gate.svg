@@ -1,0 +1,2 @@
+<path d="M 0 0 l 20 0 C 25 0 35 10 35 15 C 25 40 35 20 40 20 l -20 0 l 0 -30" fill="blue" stroke="black"/>
+<text @selector="label" fill="black" />
