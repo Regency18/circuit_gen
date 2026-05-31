@@ -21,7 +21,7 @@ export const Gate = dia.Element.define('logic.Gate', {
 const IO = Gate.define('logic.IO', {
     size: { width: 60, height: 30 },
     attrs: {
-        '.body': { fill: 'white', stroke: 'black', 'stroke-width': 2 },
+        '.body': { fill: 'black', stroke: 'black', 'stroke-width': 2 },
         '.wire': { ref: '.body', 'ref-y': .5, stroke: 'black' },
         text: {
             fill: 'black',
@@ -30,7 +30,7 @@ const IO = Gate.define('logic.IO', {
             'font-weight': 'bold',
             'font-variant': 'small-caps',
             'text-transform': 'capitalize',
-            'font-size': '14px'
+            'font-size': '21px'
         }
     }
 }, {

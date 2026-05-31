@@ -97,7 +97,7 @@ export class CircuitBuilder {
 
             this.gates[dict['name'] + `${this.andCount}`] = gate;
             this.andCount++;
-        } else if (dict["name"] === "Not") {
+        } else if (dict["name"] === "UnaryOp") {
             gate = this.makenewGate(length, dict["name"]);
             gate.position(pos.x, pos.y);  // This is correct
 
